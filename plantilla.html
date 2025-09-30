@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.5s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-book-open text-blue-600 text-2xl"></i>
+                <span class="text-xl font-semibold text-gray-800">MinimalLearn</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition">Home</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition">Courses</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition">Resources</a>
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition">About</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:block text-gray-600 hover:text-blue-600 transition">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="hidden md:block px-4 py-2 text-gray-600 hover:text-blue-600 transition">
+                    Sign In
+                </button>
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+                    Sign Up
+                </button>
+                <button class="md:hidden text-gray-600">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
+                    Learn New Skills Online With Minimal Distractions
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                    Focus on what matters with our clean, distraction-free learning platform designed to help you master new skills efficiently.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition font-medium">
+                        Browse Courses
+                    </button>
+                    <button class="border border-gray-300 text-gray-700 px-6 py-3 rounded-md hover:bg-gray-50 transition font-medium">
+                        How It Works
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-blue-100 rounded-lg"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-100 rounded-lg"></div>
+                    <div class="relative bg-white p-2 rounded-lg shadow-lg border border-gray-100">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Learning illustration" class="rounded-lg w-full h-auto">
+                        <div class="absolute bottom-4 left-4 right-4 bg-white bg-opacity-90 p-4 rounded-lg shadow-sm">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-play text-blue-600"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-800">Current Lesson</p>
+                                    <p class="text-xs text-gray-600">Introduction to Minimal Design</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Featured Courses</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Carefully selected courses designed to help you focus on learning without unnecessary distractions.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="course-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" 
+                             alt="Web Development" class="w-full h-48 object-cover">
+                        <div class="absolute top-3 right-3 bg-white rounded-full px-3 py-1 text-xs font-medium shadow-sm">
+                            Beginner
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Modern Web Development</h3>
+                            <span class="text-blue-600 font-medium">$49</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Learn to build responsive websites with HTML, CSS, and JavaScript in this focused course.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="flex -space-x-2">
+                                    <img class="w-8 h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Instructor">
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">Sarah Johnson</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 2 -->
+                <div class="course-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Data Science" class="w-full h-48 object-cover">
+                        <div class="absolute top-3 right-3 bg-white rounded-full px-3 py-1 text-xs font-medium shadow-sm">
+                            Intermediate
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Data Science Fundamentals</h3>
+                            <span class="text-blue-600 font-medium">$79</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Master the essentials of data analysis and visualization with Python and Pandas.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="flex -space-x-2">
+                                    <img class="w-8 h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Instructor">
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">Michael Chen</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Course 3 -->
+                <div class="course-card bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100 transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                             alt="UI/UX Design" class="w-full h-48 object-cover">
+                        <div class="absolute top-3 right-3 bg-white rounded-full px-3 py-1 text-xs font-medium shadow-sm">
+                            Beginner
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold text-gray-800">Minimal UI/UX Design</h3>
+                            <span class="text-blue-600 font-medium">$59</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Learn to create clean, user-friendly interfaces that focus on essential elements.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="flex -space-x-2">
+                                    <img class="w-8 h-8 rounded-full border-2 border-white" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Instructor">
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">Emma Rodriguez</span>
+                            </div>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border border-blue-600 text-blue-600 px-6 py-3 rounded-md hover:bg-blue-50 transition font-medium">
+                    View All Courses
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Features -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Learn With Us</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Our platform is designed to remove distractions and help you focus on what matters - learning.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-eye-slash text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Distraction-Free</h3>
+                    <p class="text-gray-600">
+                        Clean interface with no unnecessary elements to keep you focused on the content.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-book-open text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Structured Learning</h3>
+                    <p class="text-gray-600">
+                        Well-organized courses with clear learning paths and objectives.
+                    </p>
+                </div>
+                
+                <div class="text-center p-6">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headphones text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Quality Content</h3>
+                    <p class="text-gray-600">
+                        Expert-created materials with practical examples and exercises.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Students Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Hear from learners who have benefited from our distraction-free approach.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/women/33.jpg" alt="Student">
+                        <div class="ml-4">
+                            <h4 class="font-medium text-gray-800">Jessica Wilson</h4>
+                            <p class="text-sm text-gray-600">Web Development Student</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "The clean interface helped me focus so much better than other platforms. I completed the course in half the time I expected!"
+                    </p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex items-center mb-4">
+                        <img class="w-12 h-12 rounded-full" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Student">
+                        <div class="ml-4">
+                            <h4 class="font-medium text-gray-800">David Kim</h4>
+                            <p class="text-sm text-gray-600">Data Science Student</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">
+                        "I love how the platform removes all distractions. The content is well-organized and the exercises are practical. Highly recommended!"
+                    </p>
+                    <div class="flex mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Learn Without Distractions?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+                Join thousands of students who are focusing on what matters with our minimalist learning platform.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-white text-blue-600 px-8 py-3 rounded-md hover:bg-gray-100 transition font-medium">
+                    Get Started Now
+                </button>
+                <button class="border border-white text-white px-8 py-3 rounded-md hover:bg-blue-700 transition font-medium">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-book-open text-blue-600 text-2xl"></i>
+                        <span class="text-xl font-semibold text-gray-800">MinimalLearn</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        A distraction-free platform for focused learning.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-blue-600 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">Courses</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">Web Development</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">Data Science</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">Business</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">Guides</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">Help Center</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">Tutorials</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-800 mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">About Us</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">Careers</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">Instructors</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">Contact</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-blue-600 transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 mb-4 md:mb-0">
+                    © 2023 MinimalLearn. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition">Terms</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition">Privacy</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600 transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for demonstration purposes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Course card hover effect
+            const courseCards = document.querySelectorAll('.course-card');
+            
+            courseCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                    this.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                    this.style.boxShadow = '';
+                });
+            });
+            
+            // Mobile menu toggle would go here in a real implementation
+        });
+    </script>
+</body>
+</html>
